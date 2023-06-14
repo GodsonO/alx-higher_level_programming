@@ -2,5 +2,9 @@
 
 
 def search_replace(my_list, search, replace):
-    return ([list(map(lambda x: replace if x == search else x, my_list))])
+    newlist = my_list[:]
+    for i in range(len(newlist)):
+        if newlist[i] == search:
+            newlist[i] = replace
+    return newlist
 
