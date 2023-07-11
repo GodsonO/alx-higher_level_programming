@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Contains the clas "Student"
+Contains d clas "Student"
 """
 
 
 class Student:
     """Representation of a student"""
     def __init__(self, first_name, last_name, age):
-        """Initializes the student"""
+        """Initializes d student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
