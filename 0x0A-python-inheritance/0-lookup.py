@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Contains the lookup function
+a function that returns the list of available attributes
+and methods of an object
 """
 
 
