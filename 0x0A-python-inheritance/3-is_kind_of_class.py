@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the is_kind_of_class function
+Contains d is_kind_of_class function
 """
 
 
