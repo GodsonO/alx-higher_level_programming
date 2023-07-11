@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class MyInt
+a class MyInt that inherits from int
 """
 
 
