@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# square.py
 """
 Defines a class Square that inherits from Rectangle
 """
@@ -46,7 +45,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        Returns the dictionary representation of the instance
+        Returns the dictionary representation of the square
         """
 
         D_dict = {}
