@@ -110,6 +110,10 @@ class Rectangle(Base):
         """
         Returns string representation of Rectangle
         """
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
         print("\n"*self.y, end="")
         for _ in range(self.height):
             print(" "*self.x + "#"*self.width)
