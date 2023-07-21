@@ -51,13 +51,24 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        Returns the Python version of a JSON string
-        Args:
-            json_string (str): string to turn into Python object
-        """
+        """Returns the list of the JSON string representation json_string"""
 
         if json_string is None or len(json_string) == 0:
             json_string = "[]"
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                brand_new = cls(1, 1)
+            else:
+                brand_new = cls(1)
+
+        brand_new.update(**dictionary)
+
+        return brand_new
+
