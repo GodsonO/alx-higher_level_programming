@@ -1,26 +1,26 @@
 #!/usr/bin/python3
 """
-Defines a class Square that inherits from Rectangle
+This defines a class Square that inherits from Rectangle
 """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """
-    Represents a square using Rectangle.
+    Represents a square.
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor."""
+        """Initialize a new Square"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Returns string info about this square."""
+        """Returns the print() and str() representation of this square."""
         return '[{}] ({}) {}/{} - {}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """Size of this square."""
+        """return size of this square."""
         return self.width
 
     @size.setter
@@ -30,17 +30,13 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ Updates attributes of the Square
-        Args:
-            args (non-keyword arguments): non-specified amount of arguments
-            kwargs (key-word arguments): non-specified amount of arguments
-        """
+        """ Updates attributes of the Square"""
 
-        attrs = ["id", "size", "x", "y"]
+        D_attributes = ["id", "size", "x", "y"]
 
-        for pos, val in enumerate(args):
-            if pos < len(attrs):
-                setattr(self, attrs[pos], val)
+        for position, val in enumerate(args):
+            if pos < len(D_attributes):
+                setattr(self, D_attributes[position], val)
 
         if len(args) == 0:
             for key, value in kwargs.items():
@@ -49,13 +45,13 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        Returns the dictionary representation of the instance
+        Returns the dictionary representation of the square
         """
 
-        new_dict = {}
-        attrs = ["id", "size", "x", "y"]
+        D_dictionary = {}
+        attributes = ["id", "size", "x", "y"]
 
-        for att in attrs:
-            new_dict[att] = getattr(self, att)
+        for i in attributes:
+            D_dictionary[i] = getattr(self, i)
 
-        return new_dict
+        return D_dictionary
