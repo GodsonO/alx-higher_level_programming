@@ -48,10 +48,10 @@ class Square(Rectangle):
         Returns the dictionary representation of the square
         """
 
-        D_dictionary = {}
-        D_attributes = ["id", "size", "x", "y"]
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
 
-        for i in attributes:
-            D_dictionary[i] = getattr(self, i)
-
-        return D_dictionary
