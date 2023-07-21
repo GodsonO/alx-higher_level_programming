@@ -145,10 +145,10 @@ class Rectangle(Base):
         Returns the dictionary representation of the instance
         """
 
-        new_dict = {}
-        attrs = ["id", "width", "height", "x", "y"]
+        D_dictionary = {}
+        attributes = ["id", "width", "height", "x", "y"]
 
-        for att in attrs:
-            new_dict[att] = getattr(self, att)
+        for i in attributes:
+            D_dictionary[i] = getattr(self, i)
 
-        return new_dict
+        return D_dictionary
