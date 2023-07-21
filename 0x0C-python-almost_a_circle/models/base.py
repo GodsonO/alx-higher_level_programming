@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """Represent the base model."""
 
@@ -19,12 +20,16 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON representation of list_dictionaries"""
-        if list_dictionaries is None or list_dictionaries == []:
+        """
+        Turns the dictionary representation of an instance into JSON
+        Args:
+            list_dictionaries (list): list of representations of an instances
+        """
+        if list_dictionaries is None or list_dictionaries == 0:
             return "[]"
         if (type(list_dictionaries) != list or not
-                all(type(i) == dict for i in list_dictionaries)):
-            raise TypeError("list_dictionaries must be a list of dictionaries")
+                all(type(d) == dict for d in list_dictionaries)):
+            raise TypeError("list_dictionaries must be in list of dictionaries")
         return json.dumps(list_dictionaries)
 
     @staticmethod
