@@ -43,15 +43,15 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
-    def to_dictionary(self):
+     def to_dictionary(self):
         """
-        Returns the dictionary representation of the square
+        Returns the dictionary representation of the instance
         """
 
-        D_dictionary = {}
-        attributes = ["id", "size", "x", "y"]
+        new_dict = {}
+        attrs = ["id", "size", "x", "y"]
 
-        for i in attributes:
-            D_dictionary[i] = getattr(self, i)
+        for att in attrs:
+            new_dict[att] = getattr(self, att)
 
-        return D_dictionary
+        return new_dict
