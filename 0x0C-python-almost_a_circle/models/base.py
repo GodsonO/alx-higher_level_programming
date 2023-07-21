@@ -29,7 +29,7 @@ class Base:
             return "[]"
         if (type(list_dictionaries) != list or not
                 all(type(d) == dict for d in list_dictionaries)):
-            raise TypeError("list_dictionaries must be in list of dictionaries")
+            raise TypeError("list_dictionaries must be in the dictionaries")
         return json.dumps(list_dictionaries)
 
     @staticmethod
