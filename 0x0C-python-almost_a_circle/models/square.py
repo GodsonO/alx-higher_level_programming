@@ -33,11 +33,11 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """ Updates attributes of the Square"""
 
-        attrs = ["id", "size", "x", "y"]
+        attribute = ["id", "size", "x", "y"]
 
-        for pos, val in enumerate(args):
-            if pos < len(attrs):
-                setattr(self, attrs[pos], val)
+        for position, val in enumerate(args):
+            if position < len(attribute):
+                setattr(self, attribute[position], val)
 
         if len(args) == 0:
             for key, value in kwargs.items():
