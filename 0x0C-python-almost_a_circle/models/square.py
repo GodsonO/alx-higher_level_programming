@@ -35,7 +35,7 @@ class Square(Rectangle):
         D_attributes = ["id", "size", "x", "y"]
 
         for position, val in enumerate(args):
-            if pos < len(D_attributes):
+            if position < len(D_attributes):
                 setattr(self, D_attributes[position], val)
 
         if len(args) == 0:
