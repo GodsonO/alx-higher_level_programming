@@ -127,17 +127,13 @@ class Rectangle(Base):
                     self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        """ Updates attributes of the Rectangle
-        Args:
-            args (non-keyword arguments): non-specified amount of arguments
-            kwargs (key-word arguments): non-specified amount of arguments
-        """
+        """ Updates attributes of the Rectangle """
 
-        attrs = ["id", "width", "height", "x", "y"]
+        D_attributes = ["id", "width", "height", "x", "y"]
 
-        for pos, val in enumerate(args):
-            if pos < len(attrs):
-                setattr(self, attrs[pos], val)
+        for position, val in enumerate(args):
+            if position < len(D_attributes):
+                setattr(self, D_attributes[position], val)
 
         if len(args) == 0:
             for key, value in kwargs.items():
