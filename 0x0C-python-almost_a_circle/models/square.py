@@ -8,20 +8,20 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """
-    Represents a square using Rectangle.
+    Represents a square.
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor."""
+        """Initialize a new Square"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Returns string info about this square."""
+        """Returns the print() and str() representation of this square."""
         return '[{}] ({}) {}/{} - {}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """Size of this square."""
+        """The size of this square."""
         return self.width
 
     @size.setter
@@ -31,11 +31,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ Updates attributes of the Square
-        Args:
-            args (non-keyword arguments): non-specified amount of arguments
-            kwargs (key-word arguments): non-specified amount of arguments
-        """
+        """ Updates attributes of the Square"""
 
         attrs = ["id", "size", "x", "y"]
 
