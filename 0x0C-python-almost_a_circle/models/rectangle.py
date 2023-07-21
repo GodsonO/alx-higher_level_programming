@@ -21,93 +21,89 @@ class Rectangle(Base):
         super().__init__(id)
 
     @staticmethod
-    def integer_validator(var_name, value):
-        """ Validates and handles all error messages
-        Args:
-            var_name (str): the variable name
-            value (int): the value associated with var_name
-        """
+    def attribute_validator(var, value):
+        """ Validates and handles all error messages """
 
-        wh = ["width", "height"]
+        width_height = ["width", "height"]
         xy = ["x", "y"]
 
         if type(value) != int:
-            raise TypeError("{} must be an integer".format(var_name))
-        if var_name in wh and value <= 0:
-            raise ValueError("{} must be > 0".format(var_name))
-        if var_name in xy and value < 0:
-            raise ValueError("{} must be >= 0".format(var_name))
+            raise TypeError("{} must be an integer".format(var))
+        if var in width_height and value <= 0:
+            raise ValueError("{} must be > 0".format(var))
+        if var in xy and value < 0:
+            raise ValueError("{} must be >= 0".format(var))
 
     @property
     def width(self):
         """
-        Getter for width
+        The getter for width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Setter for width
+        The setter for width
         Args:
             value (int): the width to set
         """
-        self.integer_validator("width", value)
+        self.attribute_validator("width", value)
         self.__width = value
 
     @property
     def height(self):
         """
-        Getter for height
+        The getter for height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Setter for height
+        The setter for height
         Args:
             value (int): the height to set
         """
-        self.integer_validator("height", value)
+        self.attribute_validator("height", value)
         self.__height = value
 
     @property
     def x(self):
         """
-        Getter for x
+        The getter for x
         """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ Setter for x
+        """ The setter for x
         Args:
             value (int): the value to assign to x
         """
 
-        self.integer_validator("x", value)
+        self.attribute_validator("x", value)
         self.__x = value
 
     @property
     def y(self):
         """
-        Getter for y
+        The getter for y
         """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        Setter for y
+        the setter for y
         Args:
             value (int): the value to assign to y
         """
-        self.integer_validator("y", value)
+        self.attribute_validator("y", value)
         self.__y = value
 
     def area(self):
-        """Returns the area of this rectangle."""
+        """Returns the area of the rectangle."""
         return (self.width * self.height)
 
     def display(self):
