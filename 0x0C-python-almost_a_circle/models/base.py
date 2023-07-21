@@ -3,7 +3,6 @@
 import json
 import csv
 import turtle
-import os
 
 class Base:
     """Represent the base model."""
@@ -18,12 +17,22 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-  @staticmethod
-    def to_json_string(list_dictionaries):
-        """returns the JSON representation of list_dictionaries"""
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
-        if (type(list_dictionaries) != list or not
-                all(type(i) == dict for i in list_dictionaries)):
-            raise TypeError("list_dictionaries must be a list of dictionaries")
-        return json.dumps(list_dictionaries)
+   @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string representation of list_objs to a file
+        Args:
+            list_objs (list of objects): list of instances who inherits of Base
+        """
+
+        filename = "{}.json".format(cls.__name__)
+        my_list = []
+
+        if list_objs is not None:
+            for each in list_objs:
+                my_list.append(each.to_dictionary())
+
+        json_list = cls.to_json_string(my_list)
+
+        with open(filename, "w+", encoding="UTF-8") as f:
+            f.write(json_list)
