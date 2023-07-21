@@ -45,13 +45,13 @@ class Square(Rectangle):
 
      def to_dictionary(self):
         """
-        Returns the dictionary representation of the instance
+        Returns the dictionary representation of the square
         """
 
-        new_dict = {}
-        attrs = ["id", "size", "x", "y"]
+        D_dictionary = {}
+        D_attributes = ["id", "size", "x", "y"]
 
-        for att in attrs:
-            new_dict[att] = getattr(self, att)
+        for i in attributes:
+            D_dictionary[i] = getattr(self, i)
 
-        return new_dict
+        return D_dictionary
