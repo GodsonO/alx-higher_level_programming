@@ -72,3 +72,21 @@ class Base:
 
         return brand_new
 
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        """
+
+        D_filename = "{}.json".format(cls.__name__)
+        D_list = []
+
+        try:
+            with open(D_filename, mode="r+", encoding="UTF-8") as f:
+                r_json = f.read()
+            output_list = cls.from_json_string(r_json)
+            for i in output_list:
+                D_list.append(cls.create(**i))
+        except FileNotFoundError:
+            pass
+        return D_list
