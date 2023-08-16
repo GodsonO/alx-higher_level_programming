@@ -1,4 +1,5 @@
--- Lists all genres from the database hbtn_0d_tvshows along with the number of
+-- A script that Lists all genres from the database hbtn_0d_tvshows 
+-- along with the number of
 -- shows linked to each.
 -- Does not display genres without linked shows.
 -- Records are ordered by descending number of shows linked.
