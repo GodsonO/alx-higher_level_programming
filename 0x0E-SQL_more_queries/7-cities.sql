@@ -1,4 +1,4 @@
--- Creates the database hbtn_0d_usa with the table cities.
+-- A script that Creates the database hbtn_0d_usa with the table cities.
 CREATE DATABASE IF NOT EXISTS `hbtn_0d_usa`;
 CREATE TABLE IF NOT EXISTS `hbtn_0d_usa`.`cities` (
     PRIMARY KEY(`id`),
