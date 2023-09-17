@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
 Adds the State object "Louisiana" to the database hbtn_0e_6_usa.
-Usage: ./11-model_state_insert.py <mysql username> /
-                                  <mysql password> /
-                                  <database name>
 """
 import sys
 from sqlalchemy import create_engine
@@ -17,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    louisiana = State(name="Louisiana")
-    session.add(louisiana)
+    louisiana_state = State(name="Louisiana")
+    session.add(louisiana_state)
     session.commit()
-    print(louisiana.id)
+    print(louisiana_state.id)
