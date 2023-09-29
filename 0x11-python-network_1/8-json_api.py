@@ -10,7 +10,7 @@ import requests
 
 if __name__ == "__main__":
     D_letter = "" if len(sys.argv) == 1 else sys.argv[1]
-    D_payload = {"q": letter}
+    D_payload = {"q": D_letter}
 
     r = requests.post("http://0.0.0.0:5000/search_user", data=D_payload)
     try:
